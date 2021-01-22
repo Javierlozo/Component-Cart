@@ -4,13 +4,11 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+import Button from '@material-ui/core/Link';
+import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,7 +19,21 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+    textAlign: "left",
+    fontSize: "26px",
+    fontWeight: "600",
   },
+  linkGroup: {
+    display: "flex",
+    flexDirection: "row",
+    marginRight: "4vw"
+  },
+  link: {
+    cursor: "pointer",
+    color: "inherit",
+    marginLeft: "1.8vw",
+    marginRight: "1.8vw",
+  }
 }));
 
 export default function MenuAppBar() {
@@ -30,9 +42,10 @@ export default function MenuAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
-  const handleChange = (event) => {
-    setAuth(event.target.checked);
-  };
+// Auth change handler - may re-use this, but login/logout slider is gone so commented out
+  // const handleChange = (event) => {
+  //   setAuth(event.target.checked);
+  // };
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -44,14 +57,20 @@ export default function MenuAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" backgroundColor="#659DBD">
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
           <Typography variant="h6" className={classes.title}>
             Component Cart
           </Typography>
+          <Box className={classes.linkGroup}>
+            <Button className={classes.link} aria-label="go to home page" onClick={() => console.log("Home")}>Home</Button>
+            <Button className={classes.link} aria-label="go to about page" onClick={() => console.log("About")}>About</Button>
+            {/* If not logged in, will get the Login link*/}
+            {!auth && (
+              <Button className={classes.link}>Login</Button>
+            )}
+          </Box>
+          {/* If logged in - will get icon button/account circle/avatar & drop down menu. */}
           {auth && (
             <div>
               <IconButton
