@@ -9,6 +9,10 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 
 const sortingOptions = [
   {
+    value: 'Oldest',
+    label: 'Oldest'
+  },
+  {
     value: 'Recently Added',
     label: 'Recently Added',
   },

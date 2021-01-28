@@ -13,17 +13,17 @@ const styles = makeStyles(theme => ({
   sideContainer: {
     width: "25%",
     height: "80vh",
-    marginTop: "4vh",
+    marginTop: "2.7vh",
     marginLeft: "3vw",
     overflow: "scroll",
   },
   popularContainer: {
-    height: "40%",
+    height: "50%",
     marginTop: "3vh",
     marginBottom: "2vh"
   },
   friendContainer: {
-    height: "40%",
+    height: "50%",
     marginTop: "3vh",
     marginBottom: "2vh"
   }
