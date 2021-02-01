@@ -1,22 +1,27 @@
-import React from 'react';
-import useStyles from './styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-import Button from '@material-ui/core/Link';
-import Box from '@material-ui/core/Box';
+import React from "react";
+import styles from "./styles";
 
-export default function TopNavbar() {
-  const classes = useStyles();
+import AccountCircle from "@material-ui/icons/AccountCircle";
+
+import {
+  Switch,
+  Box,
+  Button,
+  Menu,
+  MenuItem,
+  IconButton,
+  Typography,
+  Toolbar,
+  AppBar,
+} from "@material-ui/core";
+
+export default function TopNavbar({ setUserTheme, userTheme }) {
+  const classes = styles();
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
-// Auth change handler - may re-use this, but login/logout slider is gone so commented out
+  // Auth change handler - may re-use this, but login/logout slider is gone so commented out
   // const handleChange = (event) => {
   //   setAuth(event.target.checked);
   // };
@@ -31,18 +36,29 @@ export default function TopNavbar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" backgroundColor="#659DBD">
+      <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
             Component Cart
           </Typography>
           <Box className={classes.linkGroup}>
-            <Button className={classes.link} aria-label="go to home page" onClick={() => console.log("Home")}>Home</Button>
-            <Button className={classes.link} aria-label="go to about page" onClick={() => console.log("About")}>About</Button>
+            <Button
+              className={classes.link}
+              aria-label="go to home page"
+              onClick={() => console.log("Home")}
+            >
+              Home
+            </Button>
+            <Button
+              className={classes.link}
+              aria-label="go to about page"
+              onClick={() => console.log("About")}
+            >
+              About
+            </Button>
+            <Switch onChange={() => setUserTheme(!userTheme)} />
             {/* If not logged in, will get the Login link*/}
-            {!auth && (
-              <Button className={classes.link}>Login</Button>
-            )}
+            {!auth && <Button className={classes.link}>Login</Button>}
           </Box>
           {/* If logged in - will get icon button/account circle/avatar & drop down menu. */}
           {auth && (
@@ -60,13 +76,13 @@ export default function TopNavbar() {
                 id="menu-appbar"
                 anchorEl={anchorEl}
                 anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
+                  vertical: "top",
+                  horizontal: "right",
                 }}
                 keepMounted
                 transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
+                  vertical: "top",
+                  horizontal: "right",
                 }}
                 open={open}
                 onClose={handleClose}

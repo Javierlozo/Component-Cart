@@ -1,6 +1,6 @@
-import { makeStyles } from "@material-ui/core/styles"
+import { makeStyles } from "@material-ui/core/styles";
 
-const styles = makeStyles(theme => ({
+const styles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
@@ -13,20 +13,20 @@ const styles = makeStyles(theme => ({
   sideContainer: {
     width: "25%",
     height: "80vh",
-    marginTop: "2.7vh",
-    marginLeft: "3vw",
+    padding: theme.spacing(3),
+    marginLeft: theme.spacing(2),
+    marginTop: theme.spacing(2),
     overflow: "scroll",
+    border: "1px solid black",
   },
   popularContainer: {
     height: "50%",
-    marginTop: "3vh",
-    marginBottom: "2vh"
+    margin: theme.spacing(3),
   },
   friendContainer: {
     height: "50%",
-    marginTop: "3vh",
-    marginBottom: "2vh"
-  }
-}))
+    margin: theme.spacing(3),
+  },
+}));
 
-export default styles
+export default styles;

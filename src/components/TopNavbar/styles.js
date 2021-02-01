@@ -1,8 +1,9 @@
-import { makeStyles } from "@material-ui/core/styles"
+import { makeStyles } from "@material-ui/core/styles";
 
-const styles = makeStyles(theme => ({
+const styles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    backgroundColor: theme.palette.primary.main,
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -15,15 +16,16 @@ const styles = makeStyles(theme => ({
   },
   linkGroup: {
     display: "flex",
-    flexDirection: "row",
-    marginRight: "4vw"
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    marginRight: theme.spacing(3),
   },
   link: {
     cursor: "pointer",
-    color: "inherit",
-    marginLeft: "1.8vw",
-    marginRight: "1.8vw",
-  }
-}))
+    color: theme.palette.primary.background,
+    marginLeft: theme.spacing(2),
+    marginRight: theme.spacing(2),
+  },
+}));
 
-export default styles
+export default styles;
