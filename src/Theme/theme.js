@@ -1,12 +1,14 @@
 export const dark = {
   palette: {
     primary: {
-      main: "#659DBD",
-      background: "#1a1a1a",
-      font: "white",
+      main: "#5D85C5",
+      background: "#333333",
+      font: "#ffffff",
     },
     secondary: {
       main: "#E2DCEB",
+      background: "#0d0d0d",
+      font: "#333333",
     },
   },
 };
@@ -14,12 +16,14 @@ export const dark = {
 export const light = {
   palette: {
     primary: {
-      main: "#659DBD",
+      main: "#24529A",
       background: "#ffffff",
-      font: "black",
+      font: "#333333",
     },
     secondary: {
       main: "#E2DCEB",
+      background: "#e6e6e6",
+      font: "#ffffff",
     },
   },
 };

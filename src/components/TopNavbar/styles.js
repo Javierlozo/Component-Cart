@@ -13,6 +13,7 @@ const styles = makeStyles((theme) => ({
     textAlign: "left",
     fontSize: "26px",
     fontWeight: "600",
+    color: theme.palette.secondary.font,
   },
   linkGroup: {
     display: "flex",

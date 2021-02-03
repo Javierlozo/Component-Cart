@@ -1,12 +1,11 @@
-import React from 'react';
-import useStyles from './styles';
-import Box from '@material-ui/core/Box'
-import PopularComponents from './PopularComponents'
-import PopularContributors from './PopularContributors'
+import React from "react";
+import useStyles from "./styles";
+import Box from "@material-ui/core/Box";
+import PopularComponents from "./PopularComponents";
+import PopularContributors from "./PopularContributors";
 
-  
 export default function SideNav() {
-  const classes = useStyles()
+  const classes = useStyles();
   return (
     <Box className={classes.sideContainer}>
       <Box className={classes.popularContainer}>
@@ -16,5 +15,5 @@ export default function SideNav() {
         <PopularContributors />
       </Box>
     </Box>
-      )
+  );
 }

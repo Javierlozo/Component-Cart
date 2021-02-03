@@ -1,13 +1,13 @@
-import { makeStyles } from "@material-ui/core/styles"
+import { makeStyles } from "@material-ui/core/styles";
 
-const styles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   footerContainer: {
-    position: "fixed", 
-    bottom: "0",
-    left: "0",
-    width: "100%",
-    backgroundColor: "black"
-  }
-}))
+    height: "20vh",
+    backgroundColor: theme.palette.secondary.background,
+    color: theme.palette.primary.font,
+    display: "flex",
+    justifyContent: "center",
+  },
+}));
 
-export default styles
+export default useStyles;
