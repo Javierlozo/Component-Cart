@@ -6,6 +6,7 @@ import { light, dark } from "./Theme/theme";
 
 import TopNavbar from "./components/TopNavbar/index";
 import Home from "./Pages/Home/Home";
+import Profile from "./Pages/Profile/Profile";
 import Footer from "./components/Footer/index";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <TopNavbar setUserTheme={setUserTheme} userTheme={userTheme} />
         <Home />
+        {/* <Profile /> */}
         <Footer />
       </ThemeProvider>
     </div>

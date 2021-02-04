@@ -4,6 +4,7 @@ export const dark = {
       main: "#5D85C5",
       background: "#333333",
       font: "#ffffff",
+      accent: "rgb(120, 24, 245)",
     },
     secondary: {
       main: "#E2DCEB",
@@ -19,10 +20,11 @@ export const light = {
       main: "#24529A",
       background: "#ffffff",
       font: "#333333",
+      accent: "rgb(120, 24, 245)",
     },
     secondary: {
       main: "#E2DCEB",
-      background: "#e6e6e6",
+      background: "#f2f2f2",
       font: "#ffffff",
     },
   },
