@@ -7,8 +7,8 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
   },
   feed: {
-    width: "50%",
-    borderRight: "1px solid green",
+    width: "80%",
+    borderRight: `1px solid ${theme.palette.primary.accent}`,
   },
 }));
 
