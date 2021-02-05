@@ -4,6 +4,9 @@ const styles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     backgroundColor: theme.palette.primary.main,
+    position: "sticky",
+    top: 0,
+    zIndex: "5",
   },
   menuButton: {
     marginRight: theme.spacing(2),

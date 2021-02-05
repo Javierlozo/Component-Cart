@@ -3,6 +3,8 @@ import styles from "./styles";
 
 import AccountCircle from "@material-ui/icons/AccountCircle";
 
+import { Link } from "react-router-dom";
+
 import {
   Switch,
   Box,
@@ -42,20 +44,24 @@ export default function TopNavbar({ setUserTheme, userTheme }) {
             Component Cart
           </Typography>
           <Box className={classes.linkGroup}>
-            <Button
-              className={classes.link}
-              aria-label="go to home page"
-              onClick={() => console.log("Home")}
-            >
-              Home
-            </Button>
-            <Button
-              className={classes.link}
-              aria-label="go to about page"
-              onClick={() => console.log("About")}
-            >
-              About
-            </Button>
+            <Link to="/home">
+              <Button
+                className={classes.link}
+                aria-label="go to home page"
+                onClick={() => console.log("Home")}
+              >
+                Home
+              </Button>
+            </Link>
+            <Link to="/profile">
+              <Button
+                className={classes.link}
+                aria-label="go to about page"
+                onClick={() => console.log("About")}
+              >
+                Profile
+              </Button>
+            </Link>
             <Switch onChange={() => setUserTheme(!userTheme)} />
             {/* If not logged in, will get the Login link*/}
             {!auth && <Button className={classes.link}>Login</Button>}

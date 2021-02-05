@@ -10,11 +10,14 @@ import Profile from "./Pages/Profile/Profile";
 import Footer from "./components/Footer/index";
 import ComponentPage from "./Pages/ComponentPage/ComponentPage"
 
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 function App() {
   const [userTheme, setUserTheme] = React.useState(true);
   const theme = createMuiTheme(userTheme ? light : dark);
 
   return (
+<<<<<<< HEAD
     <div
       style={{
         display: "flex",
@@ -29,6 +32,29 @@ function App() {
         <Footer />
       </ThemeProvider>
     </div>
+=======
+    <Router>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <ThemeProvider theme={theme}>
+          <TopNavbar setUserTheme={setUserTheme} userTheme={userTheme} />
+          <Switch>
+            <Route path="/home">
+              <Home />
+            </Route>
+            <Route path="/profile">
+              <Profile />
+            </Route>
+          </Switch>
+          <Footer />
+        </ThemeProvider>
+      </div>
+    </Router>
+>>>>>>> origin/ma-edits
   );
 }
 

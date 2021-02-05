@@ -7,6 +7,7 @@ const useStyles = makeStyles((theme) => ({
     top: "0px",
     borderBottom: `2px solid ${theme.palette.primary.accent}`,
     backgroundColor: theme.palette.secondary.background,
+    zIndex: "5",
   },
   tabs: {
     paddingTop: theme.spacing(2),
