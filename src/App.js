@@ -17,22 +17,6 @@ function App() {
   const theme = createMuiTheme(userTheme ? light : dark);
 
   return (
-<<<<<<< HEAD
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <ThemeProvider theme={theme}>
-        <TopNavbar setUserTheme={setUserTheme} userTheme={userTheme} />
-        <Home />
-        {/* <Profile /> */}
-        {/* <ComponentPage /> */}
-        <Footer />
-      </ThemeProvider>
-    </div>
-=======
     <Router>
       <div
         style={{
@@ -43,18 +27,20 @@ function App() {
         <ThemeProvider theme={theme}>
           <TopNavbar setUserTheme={setUserTheme} userTheme={userTheme} />
           <Switch>
-            <Route path="/home">
+            <Route exact path="/">
               <Home />
             </Route>
             <Route path="/profile">
               <Profile />
+            </Route>
+            <Route path="/component">
+              <ComponentPage />
             </Route>
           </Switch>
           <Footer />
         </ThemeProvider>
       </div>
     </Router>
->>>>>>> origin/ma-edits
   );
 }
 
