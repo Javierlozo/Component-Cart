@@ -1,22 +1,26 @@
 import React from "react";
 import useStyles from "./style";
 
-import ProfileEdit from "../ProfileEdit/ProfileEdit";
 import ProfileDisplay from "../ProfileDisplay/ProfileDisplay";
 
-export default function ProfileContent({ value }) {
+export default function ProfileContent() {
   const classes = useStyles();
   return (
     <div className={classes.profileContent}>
-      {value === 0 ? (
-        <div className={classes.left}></div>
-      ) : value === 1 ? (
-        <div className={classes.left}>hello</div>
-      ) : (
-        <div className={classes.left}>
-          <ProfileEdit />
-        </div>
-      )}
+      <div className={classes.feed}>
+        <div className={classes.tempPost}></div>
+        <div className={classes.tempPost}></div>
+        <div className={classes.tempPost}></div>
+        <div className={classes.tempPost}></div>
+        <div className={classes.tempPost}></div>
+        <div className={classes.tempPost}></div>
+        <div className={classes.tempPost}></div>
+        <div className={classes.tempPost}></div>
+        <div className={classes.tempPost}></div>
+        <div className={classes.tempPost}></div>
+        <div className={classes.tempPost}></div>
+        <div className={classes.tempPost}></div>
+      </div>
       <ProfileDisplay />
     </div>
   );

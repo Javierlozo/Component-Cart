@@ -32,6 +32,21 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(4),
     textAlign: "center",
   },
+  linkContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    marginBottom: theme.spacing(2),
+  },
+  anchor: {
+    color: "inherit",
+    textDecoration: "inherit",
+  },
+  link: {
+    backgroundColor: theme.palette.primary.main,
+    color: "white",
+    margin: theme.spacing(0.5),
+  },
 }));
 
 export default useStyles;

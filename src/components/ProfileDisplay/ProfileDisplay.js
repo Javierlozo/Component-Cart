@@ -1,10 +1,15 @@
 import React from "react";
 
 import useStyles from "./style";
-import { Avatar, Typography } from "@material-ui/core";
+import { Avatar, Typography, Chip, Button } from "@material-ui/core";
+
+import ProfileEdit from "../ProfileEdit/ProfileEdit";
 
 export default function ProfileDisplay() {
   const classes = useStyles();
+
+  const [links, setLinks] = React.useState([]);
+
   return (
     <div className={classes.profileDisplay}>
       <div className={classes.avatarContainer}>
@@ -22,9 +27,14 @@ export default function ProfileDisplay() {
           section long about section long about section long about section long
           about section long about section
         </Typography>
-        <Typography>links maybe</Typography>
-        <Typography>links maybe</Typography>
-        <Typography>links maybe</Typography>
+        <div className={classes.linkContainer}>
+          {links.map((link) => (
+            <a href={link} target="_blank" className={classes.anchor}>
+              <Chip className={classes.link} label={link} clickable />
+            </a>
+          ))}
+        </div>
+        <ProfileEdit setLinks={setLinks} links={links} />
       </div>
     </div>
   );
