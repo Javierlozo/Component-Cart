@@ -5,26 +5,35 @@ import useStyles from "./style";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 
-export default function ProfileNav() {
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
+export default function ProfileNav({ value, setValue }) {
   const classes = useStyles();
   return (
     <div className={classes.profileNav}>
       <Tabs
-        value={value}
-        onChange={handleChange}
         className={classes.tabs}
         indicatorColor="primary"
         centered
+        value={value}
+        // onChange={handleChange}
       >
-        <Tab label="Components" />
-        <Tab label="About" />
-        <Tab label="Edit Profile" />
+        <Tab
+          label="Components"
+          onClick={() => {
+            setValue(0);
+          }}
+        />
+        <Tab
+          label="About"
+          onClick={() => {
+            setValue(1);
+          }}
+        />
+        <Tab
+          label="Edit Profile"
+          onClick={() => {
+            setValue(2);
+          }}
+        />
       </Tabs>
     </div>
   );
